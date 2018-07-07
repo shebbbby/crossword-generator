@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Crossword Generator</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&amp;subset=latin-ext" rel="stylesheet">
+    <link href="bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link id="favicon" rel="shortcut icon" href="images/crossword-favicon.png" type="image/x-icon">
+  </head>
+  <body>
+
+
+    <div id="crossword-body" class="col-md-3">
+      <br>
+      <br>
+      <p>
+         <strong style="cursor:pointer;">Crossword Array<span id="numberOfWordsInCrosswordArray"></span>:</strong>  <span id="wordsInCrosswordArray"></span>
+      </p>
+      <button onclick="emptyCrosswordArray()">Empty Array</button>
+      <br>
+      <br>
+     <button onclick="generateCrosswordPuzzle(allWordsAndDefinitions.words,allWordsAndDefinitions.definitions)">Generate Crossword</button>
+      <hr>
+       <label style="cursor:pointer;" for="addword-input">Word:</label>
+       <br>
+       <input  id="addword-input" type="text">
+       <br>
+
+       <label style="cursor:pointer;" for="definition-input">Definition:</label>
+       <br>
+
+       <input id="definition-input" type="text" name="specificWord" value="" list="words-list">
+       <br>
+       <br>
+       <button onclick="addWordToArrayUsingButton()">Add Word</button>
+       <br>
+
+  </div>
+
+    <div id="crossword-game">
+      <div style="display:none;" id="crossword"></div>
+      <button id="revealOrHideAllAnswersCrosswordButton" style="display:none;" onclick="toggleHideOrRevealAnswersCrossword(); " class="answersHidden">Reveal All Answers</button>
+      <table style="display:none;" id="clues">
+          <thead>
+              <tr>
+                  <th>Across</th>
+                  <th>Down</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td><ul id="across"></ul></td>
+                  <td><ul id="down"></ul></td>
+              </tr>
+          </tbody>
+      </table>
+      </div>
+
+  </body>
+  <!-- jQuery before Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <!-- Bootstrap js should go before your JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <script src="crossword.js"></script>
+</html>
