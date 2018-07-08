@@ -19,7 +19,7 @@ function addWordToArray(word,definition){
 function addWordToArrayUsingButton(){
   var word = document.querySelector('#addword-input').value;
   var definition = document.querySelector('#definition-input').value;
-  if(word,definition){
+  if(word && definition){
     addWordToArray(word,definition);
     document.querySelector('#wordsInCrosswordArray').innerHTML = allWordsAndDefinitions.words;
     document.querySelector('#addword-input').value = '';
