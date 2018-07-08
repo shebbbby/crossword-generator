@@ -37,9 +37,6 @@ function emptyCrosswordArray(){
   document.querySelector('#wordsInCrosswordArray').innerHTML = allWordsAndDefinitions.words;
 }
 
-function generateCrosswordPuzzleWithObject(object){
-  generateCrosswordPuzzle(object.words,object.definitions);
-}
 
 // Each cell on the crossword grid is null or one of these
 function CrosswordCell(letter,word,index_of_word_in_input_list,index_of_char,r,c,direction){
@@ -698,7 +695,7 @@ function generateCrosswordPuzzleUsingPreviousList(array){
   setTimeout(function(){
     generateCrosswordPuzzle(fullWordObjectsArrayForCrossword.words, fullWordObjectsArrayForCrossword.hints);
 
-  },8000);
+  },1000);
 }
 
 var theCrosswordObject;
@@ -750,16 +747,17 @@ function generateCrosswordPuzzle(words, hints){
     theCrosswordGridWithWords = JSON.parse(JSON.stringify(theCrosswordGrid));
     theCrosswordGridWithPositions = JSON.parse(JSON.stringify(theCrosswordGrid));
 
-    setTimeout(function(){ updateClassesOnCrossword(); }, 3000);
+    setTimeout(function(){ updateClassesOnCrossword(); }, 1000);
     setTimeout(function(){
       makeAllHintLiElementsHaveProperClasses();
       document.querySelector('#clues').style.display = 'block';
       document.querySelector('#revealOrHideAllAnswersCrosswordButton').style.display = 'block';
+      document.querySelector('#recreateCrossword').style.display = 'block';
       document.querySelector('#revealOrHideAllAnswersCrosswordButton').innerHTML = 'Reveal All Answers';
       document.querySelector('#revealOrHideAllAnswersCrosswordButton').classList.add('answersHidden');
       document.querySelector('#revealOrHideAllAnswersCrosswordButton').classList.remove("answersRevealed");
       makeAllCoordinatesStyleCursorPointer();
-    }, 5000);
+    }, 1000);
 
     for (var i = 0; i < theCrosswordGridWithLetters.length; i++) {
       for (var y = 0; y < theCrosswordGridWithLetters[i].length; y++) {

@@ -13,22 +13,23 @@
 
 
 
+<div class="container">
     <div id="crossword-body" class="col-md-4">
       <br>
       <br>
       <p>
-        <strong>Directions:</strong> Add as many words/definitions as you want. Once finished, Generate a randomized crossword based on all words that you have inputted.
+        <strong>Directions:</strong> Add as many words/definitions as you want. Once finished, Generate a randomized crossword puzzle based on all words that you have inputted.
       </p>
       <hr>
       <label style="cursor:pointer;" for="addword-input">Word:</label>
       <br>
-      <input  id="addword-input" type="text">
+      <input  id="addword-input" type="text" placeholder="cliche...">
       <br>
 
       <label style="cursor:pointer;" for="definition-input">Definition:</label>
       <br>
 
-      <input id="definition-input" type="text" name="specificWord" value="" list="words-list">
+      <input id="definition-input" type="text" name="specificWord" value="" list="words-list" placeholder="meaning of word...">
       <br>
       <br>
       <button onclick="addWordToArrayUsingButton()">Add Word</button>
@@ -44,10 +45,13 @@
       <hr>
 
   </div>
+  </div>
 
   <div class="container">
     <div id="crossword-game">
+      <button id="recreateCrossword" style="display:none; margin-top:30px;" onclick="generateCrosswordPuzzle(allWordsAndDefinitions.words,allWordsAndDefinitions.definitions)">Remake</button>
       <div style="display:none;" id="crossword"></div>
+
       <button id="revealOrHideAllAnswersCrosswordButton" style="display:none;" onclick="toggleHideOrRevealAnswersCrossword(); " class="answersHidden">Reveal All Answers</button>
       <table style="display:none;" id="clues">
           <thead>
