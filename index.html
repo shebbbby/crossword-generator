@@ -12,30 +12,36 @@
   <body>
 
 
-    <div id="crossword-body" class="col-md-3">
+
+    <div id="crossword-body" class="col-md-4">
       <br>
       <br>
       <p>
+        <strong>Directions:</strong> Add as many words/definitions as you want. Once finished, Generate a randomized crossword based on all words that you have inputted.
+      </p>
+      <hr>
+      <label style="cursor:pointer;" for="addword-input">Word:</label>
+      <br>
+      <input  id="addword-input" type="text">
+      <br>
+
+      <label style="cursor:pointer;" for="definition-input">Definition:</label>
+      <br>
+
+      <input id="definition-input" type="text" name="specificWord" value="" list="words-list">
+      <br>
+      <br>
+      <button onclick="addWordToArrayUsingButton()">Add Word</button>
+      <br>
+      <hr>
+      <p>
          <strong style="cursor:pointer;">Crossword Array<span id="numberOfWordsInCrosswordArray"></span>:</strong>  <span id="wordsInCrosswordArray"></span>
       </p>
+           <button onclick="generateCrosswordPuzzle(allWordsAndDefinitions.words,allWordsAndDefinitions.definitions)">Generate Crossword</button>
       <button onclick="emptyCrosswordArray()">Empty Array</button>
-      <br>
-      <br>
-     <button onclick="generateCrosswordPuzzle(allWordsAndDefinitions.words,allWordsAndDefinitions.definitions)">Generate Crossword</button>
+      <!-- <br>
+      <br> -->
       <hr>
-       <label style="cursor:pointer;" for="addword-input">Word:</label>
-       <br>
-       <input  id="addword-input" type="text">
-       <br>
-
-       <label style="cursor:pointer;" for="definition-input">Definition:</label>
-       <br>
-
-       <input id="definition-input" type="text" name="specificWord" value="" list="words-list">
-       <br>
-       <br>
-       <button onclick="addWordToArrayUsingButton()">Add Word</button>
-       <br>
 
   </div>
 

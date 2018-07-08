@@ -37,6 +37,10 @@ function emptyCrosswordArray(){
   document.querySelector('#wordsInCrosswordArray').innerHTML = allWordsAndDefinitions.words;
 }
 
+function generateCrosswordPuzzleWithObject(object){
+  generateCrosswordPuzzle(object.words,object.definitions);
+}
+
 // Each cell on the crossword grid is null or one of these
 function CrosswordCell(letter,word,index_of_word_in_input_list,index_of_char,r,c,direction){
     this.index_of_word_in_input_list=index_of_word_in_input_list;
